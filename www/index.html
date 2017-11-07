@@ -169,7 +169,7 @@
 
   image('/img/start.png');
 
-  var exampleSocket = new WebSocket('ws://voice-prototype.herokuapp.com');
+  var exampleSocket = new WebSocket('wss://voice-prototype.herokuapp.com');
   exampleSocket.onmessage = function (event) {
     image(event.data);
   };

@@ -8,22 +8,31 @@ const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
-function broadcast(intent) {
+function broadcast(intent, uuid) {
   wss.clients.forEach(ws => {
+    if (ws.uuid !== uuid) {
+      return;
+    }
     if (ws.readyState === WebSocket.OPEN) {
-      ws.send(`${process.env.URL || 'http://localhost:5698'}/img/intents/${intent}.png`);
+      ws.send(`img/intents/${intent}.png`);
     }
   });
 }
 
-app.post('/dialogflow', bodyParser.json(), (req, res) => {
-  broadcast(req.body.result.metadata.intentName);
+app.post('/dialogflow/:uuid', bodyParser.json(), (req, res) => {
+  broadcast(req.body.result.metadata.intentName, req.params.uuid);
   res.send({ speech: 'Ok' });
 });
 
-app.get('/send/:intent', (req, res) => {
-  broadcast(req.params.intent);
+app.get('/send/:intent/:uuid', (req, res) => {
+  broadcast(req.params.intent, req.params.uuid);
   res.send();
+});
+
+wss.on('connection', ws => {
+  ws.on('message', message => {
+    ws.uuid = message;
+  });
 });
 
 app.use(express.static(path.join(process.cwd(), 'www')));

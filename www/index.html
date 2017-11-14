@@ -152,6 +152,7 @@
     <div class="sk-circle11 sk-child"></div>
     <div class="sk-circle12 sk-child"></div>
   </div>
+  <script src="js/URI.js"></script>
 </body>
 <script>
   var loadingElement = document.getElementById('loading');
@@ -167,9 +168,17 @@
     );
   }
 
-  image('/img/start.png');
+  image('img/start.png');
 
-  var exampleSocket = new WebSocket('wss://voice-prototype.herokuapp.com');
+  var exampleSocket = new WebSocket('ws://' + URI().host());
+
+  exampleSocket.onopen = function () {
+    var search = URI().search(true);
+    if (search.uuid) {
+      exampleSocket.send(search.uuid);
+    }
+  };
+
   exampleSocket.onmessage = function (event) {
     image(event.data);
   };

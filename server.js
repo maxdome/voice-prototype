@@ -24,8 +24,8 @@ app.post('/dialogflow/:uuid', bodyParser.json(), (req, res) => {
   res.send({ speech: 'Ok' });
 });
 
-app.get('/send/:intent/:uuid', (req, res) => {
-  broadcast(req.params.intent, req.params.uuid);
+app.get('/send/:intent', (req, res) => {
+  broadcast(req.params.intent, req.query.uuid);
   res.send();
 });
 

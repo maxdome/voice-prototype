@@ -181,10 +181,20 @@
     if (search.uuid) {
       exampleSocket.send(search.uuid);
     }
+    function ping() {
+      console.log(new Date() + ': send ping');
+      exampleSocket.send('ping');
+      setTimeout(ping, 5000);
+    }
+    ping();
   };
 
   exampleSocket.onmessage = function (event) {
-    image(event.data);
+    if (event.data === 'pong') {
+      console.log(new Date() + ': got pong');
+    } else {
+      image(event.data);
+    }
   };
 </script>
 </html>

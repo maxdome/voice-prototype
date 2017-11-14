@@ -31,7 +31,12 @@ app.get('/send/:intent', (req, res) => {
 
 wss.on('connection', ws => {
   ws.on('message', message => {
-    ws.uuid = message;
+    if (message === 'ping') {
+      console.log(new Date() + ': got ping, send pong');
+      ws.send('pong');
+    } else {
+      ws.uuid = message;
+    }
   });
 });
 

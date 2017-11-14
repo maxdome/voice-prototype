@@ -170,7 +170,11 @@
 
   image('img/start.png');
 
-  var exampleSocket = new WebSocket('ws://' + URI().host());
+  var protocol = 'ws';
+  if (URI().protocol() === 'https') {
+    protocol = 'wss';
+  }
+  var exampleSocket = new WebSocket(protocol + '://' + URI().host());
 
   exampleSocket.onopen = function () {
     var search = URI().search(true);

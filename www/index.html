@@ -194,8 +194,8 @@
     if (event.data === 'pong') {
       console.log(new Date() + ': got pong');
     } else {
-      console.log(new Date() + ': got image "' + event.data + '"');
-      image(event.data);
+      console.log(new Date() + ': got intent "' + event.data + '"');
+      image('img/intents/' + event.data + '.png');
     }
   };
 </script>

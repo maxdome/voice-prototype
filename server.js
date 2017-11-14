@@ -21,7 +21,7 @@ function broadcast(intent, uuid) {
       return;
     }
     if (ws.readyState === WebSocket.OPEN) {
-      ws.send(`img/intents/${intent}.png`);
+      ws.send(intent);
     }
   });
 }

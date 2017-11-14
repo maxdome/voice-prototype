@@ -8,6 +8,13 @@ const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
+app.use(
+  require('@dnode/http-auth')({
+    user: process.env.HTTP_AUTH_USER,
+    password: process.env.HTTP_AUTH_PASSWORD,
+  })
+);
+
 function broadcast(intent, uuid) {
   wss.clients.forEach(ws => {
     if (ws.uuid !== uuid) {

@@ -30,6 +30,7 @@ const responses = require('./responses.json');
 
 app.post('/dialogflow/:uuid', bodyParser.json(), (req, res) => {
   const intentName = req.body.result.metadata.intentName;
+  console.log(new Date() + ': got intent "' + intentName + '"');
   broadcast(intentName, req.params.uuid);
   let speech = 'Ok';
   if (responses[intentName]) {

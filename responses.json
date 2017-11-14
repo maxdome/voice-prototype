@@ -1,0 +1,14 @@
+{
+  "chooseasset": [
+    "Deine Auswahl wurde bestätigt!"
+  ],
+  "playvideo": [
+    "Video wird abgespielt"
+  ],
+  "searchpopular": [
+    "Auf Deinem Fernseher zeige ich dir die Meist gesehenen $serie_film aus dem $svod_tvod"
+  ],
+  "searchtitle": [
+    "$Titel wurde in Deinem Paket gefunden. Schaue auf deinen Fernseher und bestätige die Auswahl mit dem Wort \"Enter\" oder \"Bestätigen\"."
+  ]
+}

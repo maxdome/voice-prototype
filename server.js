@@ -26,9 +26,19 @@ function broadcast(intent, uuid) {
   });
 }
 
+const responses = require('./responses.json');
+
 app.post('/dialogflow/:uuid', bodyParser.json(), (req, res) => {
-  broadcast(req.body.result.metadata.intentName, req.params.uuid);
-  res.send({ speech: 'Ok' });
+  const intentName = req.body.result.metadata.intentName;
+  broadcast(intentName, req.params.uuid);
+  let speech = 'Ok';
+  if (responses[intentName]) {
+    speech = responses[intentName][Math.floor(Math.random() * responses[intentName].length)];
+    for (const key in req.body.result.parameters) {
+      speech = speech.replace(`$${key}`, req.body.result.parameters[key]);
+    }
+  }
+  res.send({ speech });
 });
 
 app.get('/send/:intent', (req, res) => {

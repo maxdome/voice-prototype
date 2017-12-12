@@ -3,7 +3,7 @@
     "Deine Auswahl wurde bestätigt!"
   ],
   "hellomax": [
-    "Hallo! Ich heiße Max und helfe Dir dabei FIlme und Serien aus unserem maxdome Store oder dem Paket herauszusuchen. Was möchtest Du denn heute anschauen?"
+    "Hallo! Ich heiße Max und helfe Dir dabei FIlme und Serien aus unserer maxdome Videothek herauszusuchen. Was möchtest Du denn heute anschauen?"
   ],
   "playvideo": [
     "Video wird abgespielt"
@@ -12,6 +12,9 @@
     "Auf Deinem Fernseher zeige ich dir die Meist gesehenen $serie_film aus dem $svod_tvod"
   ],
   "searchtitle": [
-    "$Titel wurde in Deinem Paket gefunden. Schaue auf deinen Fernseher und bestätige die Auswahl mit dem Wort \"Enter\" oder \"Bestätigen\"."
+    "$Titel wurde gefunden. Bitte schaue auf Deinen Fernseher und bestätige deine Auswahl mit \"enter\" oder \"bestätigen\""
+  ],
+  "pause": [
+    "Video wurde pausiert"
   ]
 }

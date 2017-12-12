@@ -5,7 +5,7 @@
   "hellomax": [
     "Hallo! Ich heiße Max und helfe Dir dabei FIlme und Serien aus unserer maxdome Videothek herauszusuchen. Was möchtest Du denn heute anschauen?"
   ],
-  "playvideo": [
+  "play": [
     "Video wird abgespielt"
   ],
   "searchpopular": [
@@ -16,5 +16,8 @@
   ],
   "pause": [
     "Video wurde pausiert"
+  ],
+  "FallbackCancel": [
+    "Ok, jetzt nochmal von Vorne. Was kann ich heute für Dich heraussuchen?"
   ]
 }

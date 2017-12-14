@@ -5,20 +5,23 @@
   "hellomax": [
     "Hallo! Ich heiße Max und helfe Dir dabei Filme und Serien aus unserer maxdome Videothek herauszusuchen. Was möchtest Du denn anschauen?"
   ],
+  "merkliste": [
+    "Nächste Folge wird abgespielt"
+  ],
+  "pause": [
+    "Video wurde pausiert"
+  ],
   "play": [
     "Video wird abgespielt"
+  ],
+  "playnextepisode": [
+    "Nächste Folge wird abgespielt"
   ],
   "searchpopular": [
     "Auf Deinem Fernseher zeige ich dir die Meist gesehenen $serie_film aus dem $svod_tvod"
   ],
   "searchtitle": [
     "$Titel wurde gefunden. Bitte schaue auf Deinen Fernseher und bestätige deine Auswahl mit \"enter\" oder \"bestätigen\""
-  ],
-  "pause": [
-    "Video wurde pausiert"
-  ],
-  "playnextepisode": [
-    "Nächste Folge wird abgespielt"
   ],
   "FallbackCancel": [
     "Ok, jetzt nochmal von Vorne. Was kann ich heute für Dich heraussuchen?"

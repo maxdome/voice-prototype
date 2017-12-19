@@ -1,5 +1,3 @@
-# Voice Prototype
-
 A prototype of the showcase to control OTT devices by voice commands.
 
 ## General Workflow
